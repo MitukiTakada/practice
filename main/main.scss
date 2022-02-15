@@ -1,0 +1,236 @@
+li {
+  list-style: none;
+}
+a {
+  color: black;
+  display: inline-block;
+}
+img {
+  max-width: 100%;
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+header {
+  background-color: #fff;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  & .site-title {
+    padding: 20px 60px;
+  }
+  & .site-contents {
+    background-color: #333;
+    color: white;
+  }
+  & .site-contents > ul{
+    display: flex;
+    justify-content: flex-start;
+    & li {
+      margin-right: 10px;
+      padding: 10px 60px 10px 0;
+    }
+  }
+}
+main {
+  & .top-pictures {
+    padding-top: 150px;
+    margin-bottom: 150px;
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      & li {
+        width: 32%;
+        & .picture > img {
+          max-width: 100%;
+        }
+        & .readmore {
+          text-align: center;
+        }
+        & a {
+          &:hover {
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+  & .main-contents {
+    display: flex;
+    justify-content: space-between;
+    & .main {
+      width: 65%;
+      & .top-word {
+        display: flex;
+        & .category {
+          margin-left: 10px;
+        }
+      }
+      & .main-visual > img{
+        max-width: 100%;
+      }
+      & .readmore {
+        text-align: center;
+        & a {
+          &:hover {
+            text-align: center;
+            opacity: 0.7;
+            text-decoration: none;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+    & .aside {
+      width: 33%;
+      padding: 20px;
+      & .vloger {
+        & .vloger-img {
+          text-align: center;
+          & img {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+          }
+        }
+        & .vloger-name {
+          text-align: center;
+        }
+      }
+      & .ranking {
+        text-align: center;
+        margin-bottom: 60px;
+        & h4 {
+          font-size: 1.5rem;
+        }
+        & .ranking-1,.ranking-2,.ranking-3 {
+          margin-bottom: 30px;
+        }
+        & .ranking-text {
+          text-align: left;
+        }
+      }
+      & .archive {
+        & h5 {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+        & .archive-date {
+          & ul {
+            & li {
+              padding: 20px;
+              border-top: 1px solid #333;
+              text-align: left;
+              &:last-child {
+                border-bottom: 1px solid #333;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  background-color: #f7f7f7;
+  margin-top: 70px;
+  & .footer-contents {
+    display: flex;
+    justify-content: space-between;
+    & .footer-title {
+      font-size: 1rem;
+    }
+    & .About {
+      width: 30%;
+      & p {
+        font-size: 1rem;
+      }
+      & ul {
+        padding-left: 0;
+      }
+      & li > .arrow {
+        position: relative;
+        padding-left: 12px;
+        color: #333;
+        text-decoration: none;
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 6px 0 6px 8px;
+          border-color: transparent transparent transparent #333;
+          position: absolute;
+          top: 11px;
+          left: 0;
+          margin-top: -6px;
+        }
+      }
+    }
+    & .Menu {
+      width: 30%;
+      & ul {
+        padding-left: 0;
+        border-bottom: 1px solid black;
+        & li {
+          padding: 15px;
+          border-top: 1px solid black;
+        }
+      }
+    }
+    & .Twitter {
+      width: 30%;
+    }
+  }
+  & .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+@media (max-width: 767px) {
+  .top-pictures {
+    padding-top: 140px;
+    margin-bottom: 0 !important;
+    & ul {
+      flex-direction: column;
+      & li {
+        width: 100% !important;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .main-contents {
+    flex-direction: column;
+    & .main {
+      width: 100% !important;
+    }
+    & .aside {
+      width: 100% !important;
+      padding-left: 0 !important;
+      & .archive {
+        & ul {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  footer {
+    & .footer-contents {
+      flex-direction: column;
+      & .About,.Menu,.Twitter {
+        width: 100%;
+      }
+    }
+  }
+}
